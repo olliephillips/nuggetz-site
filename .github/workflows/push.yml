@@ -13,6 +13,7 @@ jobs:
       - run: echo "building on branch ${{ github.ref }}"
       - run: echo "💡 The ${{ github.ref }} of ${{ github.repository }} repository has been cloned to the runner"
       - run: cp ./src/* ./public
+      - run: git status
       - name: Commit build to 'site' branch
         uses: EndBug/add-and-commit@v7
         with:
