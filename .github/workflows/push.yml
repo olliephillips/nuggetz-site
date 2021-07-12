@@ -14,7 +14,7 @@ jobs:
       - run: echo "💡 The ${{ github.ref }} of ${{ github.repository }} repository has been cloned to the runner"
       - run: cp ./src/* ./public
       - run: git status
-      - uses: actions/checkout@site
+      - uses: actions/checkout@v2
         with:
           ref: 'site'
       - run: git merge master
