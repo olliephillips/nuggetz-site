@@ -12,6 +12,8 @@ jobs:
       - run: echo "Nuggetz build on `push` started"
       - run: echo "building on branch ${{ github.ref }}"
       - run: echo "💡 The ${{ github.ref }} of ${{ github.repository }} repository has been cloned to the runner"
+      - name: Building site
+        - run : cp ./src/. ./public/.
       - name: Commit build to 'site' branch
         uses: EndBug/add-and-commit@v7
         with:
