@@ -8,8 +8,8 @@ jobs:
   Build website:
     runs-on: ubuntu-latest
     steps:
-      - run echo "Nuggetz build on `push` started"
-      - run echo "building on branch ${{ github.ref }}"
+        run: echo "Nuggetz build on `push` started"
+        run: echo "building on branch ${{ github.ref }}"
 
       - name: Checking out repository code
         uses: actions/checkout@v2
