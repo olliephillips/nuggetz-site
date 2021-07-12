@@ -2,7 +2,7 @@ name: Nuggetz Push
 on:
   push:
     branches:
-      - *
+      - '*'
       - '!site'
 jobs:
   Build website:
