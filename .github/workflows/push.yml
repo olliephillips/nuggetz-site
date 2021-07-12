@@ -18,6 +18,5 @@ jobs:
         with:
           add: 'public'
           branch: 'site'
-          pull_strategy: '--rebase'
           message: 'Nuggetz build commit'
       - run: echo "Build status is ${{ job.status }}"
