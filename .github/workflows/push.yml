@@ -8,12 +8,14 @@ jobs:
   Build-website:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
       - run: echo "Nuggetz build on `push` started"
       - run: echo "building on branch ${{ github.ref }}"
       - run: echo "💡 The ${{ github.ref }} of ${{ github.repository }} repository has been cloned to the runner"
       - run: cp ./src/* ./public
       - run: git status
       - uses: actions/checkout@site
+        with:
+          ref: 'site'
       - run: git merge master
       - run: echo "Build status is ${{ job.status }}"
