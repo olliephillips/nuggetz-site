@@ -17,5 +17,5 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: 'site'
-      - run: git merge master
+      - run: git merge origin/master
       - run: echo "Build status is ${{ job.status }}"
