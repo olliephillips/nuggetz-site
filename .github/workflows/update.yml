@@ -1,11 +1,9 @@
-name: Nuggetz Push
 on:
-  push:
-    branches:
-      - '*'
-      - '!site'
+  schedule:
+    - cron:  '30 7-18 * * *'
+
 jobs:
-  Build-website:
+  Update-website:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repo
@@ -21,7 +19,7 @@ jobs:
           BRANCH: site
           FOLDER: public
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MESSAGE: "Nuggetz build on `push`"
+          MESSAGE: "Nuggetz build on `update`"
 
       - name: Build completed
         run: echo "Build status is ${{ job.status }}"
