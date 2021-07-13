@@ -22,6 +22,6 @@ jobs:
           git reset --hard origin/site
           git add .
           git commit -m "Nuggetz build"
-          git push origin site
+          git push --force origin site
       - name: Build complete
         run: echo "Build status is ${{ job.status }}"
