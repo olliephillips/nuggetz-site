@@ -18,11 +18,9 @@ jobs:
         run: |
           git config --global user.name '${{github.actor}}'
           git config --global user.email '${{github.actor}}@users.noreply.github.com'
-          git reset --hard origin/site
+          git fetch --all
           git add .
           git commit -m "Nuggetz build"
-          git pull
           git push origin site
       - name: Build complete
-
         run: echo "Build status is ${{ job.status }}"
