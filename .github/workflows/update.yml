@@ -1,6 +1,7 @@
 on:
   schedule:
     - cron:  '10,40 7-20 * * *'
+  workflow_dispatch:
 jobs:
   Update-website:
     runs-on: ubuntu-latest
