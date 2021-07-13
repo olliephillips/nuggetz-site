@@ -21,7 +21,7 @@ jobs:
           BRANCH: site
           FOLDER: public
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MESSAGE: "Nuggetz build from `push`"
+          MESSAGE: "Nuggetz build on `push`"
 
       - name: Build completed
         run: echo "Build status is ${{ job.status }}"
