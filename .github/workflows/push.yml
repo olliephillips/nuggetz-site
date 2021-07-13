@@ -12,10 +12,13 @@ jobs:
       - run: echo "Nuggetz build on `push` started"
       - run: echo "building on branch ${{ github.ref }}"
       - run: echo "💡 The ${{ github.ref }} of ${{ github.repository }} repository has been cloned to the runner"
-      - run: cp ./src/* ./public
-      - run: git status
-      - uses: actions/checkout@v2
-        with:
-          ref: 'site'
-      - run: git merge --allow-unrelated-histories origin/master
-      - run: echo "Build status is ${{ job.status }}"
+      - name: Building website
+        run: cp ./src/* ./public
+      - name: Commiting website to `site` branch
+        run: |
+          git config --global user.name '${{github.actor}}'
+          git config --global user.email '${{github.actor}}@users.noreply.github.com'
+          git commit -am "Nuggetz build"
+          git push --force origin/site
+      - name: Build complete
+        run: echo "Build status is ${{ job.status }}"
