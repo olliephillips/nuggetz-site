@@ -1,7 +1,0 @@
-      - name: Commit build to 'site' branch
-        uses: EndBug/add-and-commit@v7
-        with:
-          add: 'public'
-          branch: 'site'
-          message: 'Nuggetz build commit'
-          pull_strategy: '--no-ff'
