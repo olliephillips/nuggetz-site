@@ -11,7 +11,7 @@ So expect, bugs errors and downtime as we go!
 
 You can follow on Twitter [@nuggetzcms](https://twitter.com/nuggetzcms).
 
-The repo for this site is [here](https://github.com/olliephillips/nuggetz-cms) (for the time being)
+The repo for this site is [here](https://github.com/olliephillips/nuggetz-site) (for the time being)
 
 Nuggetz CMS repo will be public soon
 
