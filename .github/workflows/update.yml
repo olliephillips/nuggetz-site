@@ -1,7 +1,7 @@
 name: Nuggetz Update
 on:
   schedule:
-    - cron:  '10,40 7-20 * * *'
+    - cron:  '30 7-20 * * *'
   workflow_dispatch:
 jobs:
   Update-website:
@@ -10,10 +10,13 @@ jobs:
       - name: Checkout the repo
         uses: actions/checkout@v2
 
-      - name: Running build
-        run: cp ./src/* ./public
+      - name: Running build using Nuggetz docker image
+        run: docker run -v ${{ github.workspace }}/src:/app/src -v ${{ github.workspace }}/data:/app/data --name nuggetz slippytrumpet/nuggetz:v0.0.1
 
-      - name: Push to `site` branch
+      - name: Copying artifacts from container
+        run: docker cp nuggetz:/app/public/. ./public
+
+      - name: Pushing to `site` branch
         uses: s0/git-publish-subdir-action@develop
         env:
           REPO: self
