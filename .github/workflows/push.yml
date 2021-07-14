@@ -14,7 +14,8 @@ jobs:
       - name: Running build
         run: |
         cp ./src/* ./public
-        docker run --name nuggetz slippytrumpet/nuggetz:v0.0.1 && docker cp nuggetz:/app/public ./public
+        docker run --name nuggetz slippytrumpet/nuggetz:v0.0.1
+        docker cp nuggetz:/app/public ./public
 
       - name: Push to `site` branch
         uses: s0/git-publish-subdir-action@develop
